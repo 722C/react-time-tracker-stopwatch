@@ -15,10 +15,21 @@ export default class TimeTracker extends React.Component<
 
   constructor(props: TimeTrackerProps, ...args: Array<any>) {
     super(props, ...args)
+
+    if (typeof props.initialStartTimestamp === 'number') {
+      clearInterval(this.intervalId)
+      if (props.initialStartTimestamp >= 0) {
+        this.intervalId = setInterval(this.updateValue, 1000)
+      }
+    }
     this.state = {
       value: props.initialValue || 0,
       storedValue: this.valueToString(props.initialValue || 0),
-      start: null,
+      start:
+        typeof props.initialStartTimestamp === 'number' &&
+        props.initialStartTimestamp >= 0
+          ? props.initialStartTimestamp
+          : null,
     }
   }
 

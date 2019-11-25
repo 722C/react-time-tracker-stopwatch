@@ -5,6 +5,7 @@ export interface TimeTrackerProps extends React.Props<TimeTracker> {
   stopText?: string
   onTimeUpdate?: (value: number, startTimestamp: number | null) => void
   initialValue?: number
+  initialStartTimestamp?: number
   wrapClass?: string
   inputClass?: string
   buttonClass?: string
