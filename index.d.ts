@@ -5,7 +5,7 @@ export interface TimeTrackerProps extends React.Props<TimeTracker> {
   stopText?: string
   onTimeUpdate?: (value: number, startTimestamp: number | null) => void
   initialValue?: number
-  initialStartTimestamp?: number
+  initialStartTimestamp?: number | null
   wrapClass?: string
   inputClass?: string
   buttonClass?: string
@@ -15,7 +15,7 @@ export interface TimeTrackerProps extends React.Props<TimeTracker> {
 }
 
 declare class TimeTracker extends React.Component<TimeTrackerProps, any> {
-  setTimeTrackerState: (value: number, startTimestamp?: number) => void
+  setTimeTrackerState: (value: number, startTimestamp?: number | null) => void
 }
 
 declare module 'react-time-tracker-stopwatch' {}

@@ -104,7 +104,7 @@ export default class TimeTracker extends React.Component<
     this.setState({ storedValue: event.target.value })
   }
 
-  setTimeTrackerState = (value: number, start?: number) => {
+  setTimeTrackerState = (value: number, start?: number | null) => {
     if (typeof start === 'number') {
       clearInterval(this.intervalId)
       if (start >= 0) {

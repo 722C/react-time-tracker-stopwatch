@@ -1,6 +1,6 @@
 {
   "name": "react-time-tracker-stopwatch",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A React and TypeScript based stopwatch for time tracking.",
   "main": "lib/index.js",
   "scripts": {
